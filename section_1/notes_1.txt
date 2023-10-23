@@ -124,7 +124,20 @@ Section 1 Notes:
 			by storing words into a register. Registers are measured by the size of their respective words (32-bit register, 64-bit, etc.)
 
 
-	Field:		An integrated circuit that can be programmed (or configured) to achieve a specific purpose. The hardware of an FPGA is 
+	Field:		An integrated circuit that can be programmed (or configured) to behave like any other circuit. The hardware of an FPGA is 
 	Programmable	directed by the programmer using a hardware description language (HDL). 
 	Gate Arrays
-	(FPGAs)
+	(FPGAs)		FPGAs can only be programmed to behave like digital circuits, which are circuits that only compute using 0s and 1s
+			(represented by either a 0 V or a <upper bound> V signal). FPGAs represent these digital circuits using gigantic
+			and complex arrays of logic gates.
+
+			One of the most fundamental components of the FPGA is the multiplexer, a device that take in multiple inputs, and selects
+			one of those inputs to become the output. Simple multiplexers select the output using something called one-hot encoding.
+
+			A one-hot encoded array of binary numbers has only one 1. So, for example, if 5 in binary is 101, its one-hot encoding 
+			is 00100000, this binary representation only has one 1. When multiplexers are chained together in large arrays, they can
+			control the path a signal takes in a circuit, this is how FPGAs are able to represent many different kinds of circuits
+			(Basic idea, extreme oversimplification).
+
+	Lookup tables:	A predetermined set of inputs and outputs
+	(LUTs)
