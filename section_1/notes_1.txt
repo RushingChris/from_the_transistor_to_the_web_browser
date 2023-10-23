@@ -1,4 +1,4 @@
-Transistors -> ICs -> FPGAs -> LUTs
+Semiconductors -> Transistors -> Logic Gates -> ICs -> Microprocessors -> FPGAs -> LUTs
 
 Section 1 Notes:
 
@@ -69,5 +69,62 @@ Section 1 Notes:
 	Circuits	single semiconductor surface. Each device is made up materials (semiconductor wafers, copper, etc) that all combine into 
 			what is called a die.
 
-			IC packages are connected to external circuits through pins (gold wire connectors)
-			
+			IC packages (which contain the microscopic dies) are connected to external circuits through pins (gold wire connectors)
+			The pins on a package are polarized, meaning they start from a certain point (indicated usually by a dot) and then count
+			up counter-clockwise from the first pin. Packages can either be through hole (larger with larger pins, PTH) or surface mount
+			(meant to be soldered directly to the board), referred to as SMDs. Dual in-line packages (DIP) are ICs with two parallel
+			rows of pins
+
+			Printed circuit boards (PCBs) are custom boards designed to have surface mounted ICs soldered directly to them.
+
+			Types of SMDs:
+
+				Small-outline (SOP):	Analagous to the DIP, smaller with the pins facing outward rather than downward.
+				Quad Flat Package:	Pins outwards on all sides of a square package
+				Quad Flat No Lead:	Tiny contacts on the bottom edges of the package instead of pins, smalles
+				-> (QFN)
+				Ball Grid Array (BGA):	Tiny balls of solder on the bottom of the package rather than pins or contacts
+
+			Types of ICs:
+
+				Logic Gates:	Built from a small amount of transistors, smallest unit of an IC, sometimes its own IC
+				Timers:		Basic logic circuitry, can be made from a relatively small amount of logic gates
+				-> Counters
+				-> Shift Registers
+				-> Latches
+				
+				Microcontrollers, Microprocessors, FPGAs, etc:
+					
+					Large ICs, containing millions and billions of transistors. Between 8-100 pins and 1000s of pins for
+					FPGAs and other very complex microprocessors.
+
+					Microprocessor consist of a small computer contained within an IC, whereas although a microcontroller
+					is also a small computer, it is optimized for controlling a small electronic component.
+
+				Sensors:	Small ICs that can be used to measure temperature, speed, rotation, alcohol etc.
+
+	Microprocessor:	An integrated circuit that can load and execute program instructions (based on a certain instruction set architecture)
+
+			Structure:
+
+				Arithemetic Logic Unit (ALU):	Performs addition, subtraction, and basic logic operations. Operations happen
+								sequentially, and each operations generates a flag (represented by a bit field)
+								which indicates to the next operation the result of that operation.
+
+								The operation flags are stored in a status register.
+
+				Control Logic Section:		Responsible for retrieving instructions from memory and sending them to the ALU
+								in the form of operations to be performed.
+
+				Register:			Memory storage for the processor. The Control Logic Section retrieves data from
+								larger stores of memory lower in the memory hierarchy, and loads it into the
+								register.
+
+			Microprocessors use words as a basic unit of data. When the control logic section retrieves data from memory, it does so
+			by storing words into a register. Registers are measured by the size of their respective words (32-bit register, 64-bit, etc.)
+
+
+	Field:		An integrated circuit that can be programmed (or configured) to achieve a specific purpose. The hardware of an FPGA is 
+	Programmable	directed by the programmer using a hardware description language (HDL). 
+	Gate Arrays
+	(FPGAs)
